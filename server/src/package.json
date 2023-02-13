@@ -1,0 +1,52 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "lint": "eslint",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js",
+    "deploy-g": "npm run build && gh-pages -d dist --repo https://github.com/JackButler99/elearning-backend-build",
+    "deploy": "firebase deploy --only functions:api",
+    "serve": "firebase emulators:start --only functions"
+  },
+  "author": "rk",
+  "license": "ISC",
+  "dependencies": {
+    "@google-cloud/storage": "^6.8.0",
+    "aws-sdk": "^2.1271.0",
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.20.1",
+    "busboy": "^1.5.0",
+    "cookie-parser": "^1.4.6",
+    "cors": "^2.8.5",
+    "csrf": "^3.1.0",
+    "csurf": "^1.11.0",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "express-formidable": "^1.2.0",
+    "express-jwt": "^7.7.7",
+    "firebase-admin": "^11.5.0",
+    "firebase-functions": "^4.2.0",
+    "firebase-tools": "^11.21.0",
+    "fs": "^0.0.1-security",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^6.7.1",
+    "morgan": "^1.10.0",
+    "multer": "^1.4.3",
+    "slugify": "^1.6.5"
+  },
+  "devDependencies": {
+    "@babel/eslint-parser": "^7.19.1",
+    "babel-eslint": "^10.1.0",
+    "eslint": "^8.32.0",
+    "eslint-config-google": "^0.14.0",
+    "firebase-functions-test": "^3.0.0",
+    "gh-pages": "^4.0.0"
+  },
+  "engines": {
+    "node": "16"
+  }
+}
