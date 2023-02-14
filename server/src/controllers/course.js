@@ -12,11 +12,11 @@ import {Storage} from '@google-cloud/storage'
 
 
 const gcsConfig = new Storage ({
-  projectId: "elearning-back-test",
+  projectId: "direct-keel-308419",
   keyFilename: "./gcKey.json",
 })
 
-const bucket = gcsConfig.bucket("my-bucket00111")
+const bucket = gcsConfig.bucket("elearning-bucket-profiles")
 const lessonBucket = gcsConfig.bucket("lessons-video1")
 
 export const uploadFile = async (req, res) => {
@@ -35,7 +35,7 @@ export const uploadFile = async (req, res) => {
 
     blobStream.on("finish", async()=> {
       res.status(200)
-      res.json({...file, url: "https://storage.googleapis.com/my-bucket00111/" + file.originalname})
+      res.json({...file, url: "https://storage.googleapis.com/elearning-bucket-profiles/" + file.originalname})
       console.log("Upload Success")
     })
     blobStream.end(req.file.buffer)
@@ -78,7 +78,7 @@ export const uploadPreviewVideo = async (req, res) => {
   try {
     const file = req.file
     uploadFile(req, res)
-    const course = await Courses.findOneAndUpdate({slug: req.body.slug}, {previewVideo:"https://storage.googleapis.com/my-bucket00111/" + file.originalname}).exec()
+    const course = await Courses.findOneAndUpdate({slug: req.body.slug}, {previewVideo:"https://storage.googleapis.com/elearning-bucket-profiles/" + file.originalname}).exec()
     
   } catch (error){
     res.status(500).send(error)

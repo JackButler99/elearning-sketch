@@ -51,11 +51,11 @@ const Navbar = () => {
 
   return (
     <>
-    <div className='sticky bg-white top-0 z-10 pt-2 '>
-      <div className=' flex items-center justify-end py-2 px-4 relative'>
+    <div className='sticky bg-gray-900 text-gray-300 top-0 z-10 pt-2 '>
+      <div className=' flex items-center justify-end  px-4 relative'>
         <h1 className='p-6 text-2xl font-bold'>Logo</h1>
         <div className='w-5/12 m-auto flex items-center justify-between border-solid border-2 border-[#ccc]
-                          rounded-md text-skin-base p-2' >
+                          rounded-md bg-gray-100 text-gray-900 text-skin-base p-2' >
           <input 
             className='border-none bg-transparent outline-none text-skin-base w-1/2'
             placeholder='Search Courses'
@@ -90,20 +90,20 @@ const Navbar = () => {
         <>
           <div 
             onClick ={()=>setIsUserClicked(!isUserClicked)}
-            className= {`p-2 cursor-pointer hover:bg-gray-300 hover:scale-110 transition ease-out ${isUserClicked? 'bg-gray-400': ''}`}
+            className= {`p-2 cursor-pointer hover:bg-gray-700 hover:scale-110 transition ease-out ${isUserClicked? 'bg-gray-400': ''}`}
           >
             {currentUser?.username}
           </div>
           {isUserClicked && 
-            <div className='z-50 flex flex-col top-[4rem] right-[1rem] fixed bg-white w-[10%] '>
+            <div className='z-50 flex flex-col top-[4rem] right-[1rem] fixed bg-gray-900 w-[10%] '>
               <div 
                 onClick ={()=>setIsUserClicked(!isUserClicked)}
-                className= {`p-2 cursor-pointer hover:bg-gray-300 hover:scale-110 transition ease-out `}
+                className= {`p-2 cursor-pointer hover:bg-gray-700 hover:scale-110 transition ease-out `}
               >
                 {currentUser?.username}
               </div>
               <div 
-                className= {`p-2 cursor-pointer relative r-10 hover:bg-gray-300 hover:scale-110 transition ease-out `}>
+                className= {`p-2 cursor-pointer relative r-10 hover:bg-gray-700 hover:scale-110 transition ease-out `}>
                 <Link to='/userSettings'>
                   Settings
                 </Link>                
@@ -111,7 +111,7 @@ const Navbar = () => {
 
             <div 
               onClick={()=>handleLogout()}
-              className= {`p-2 cursor-pointer relative r-10 hover:bg-gray-300 hover:scale-110 transition ease-out `}>
+              className= {`p-2 cursor-pointer relative r-10 hover:bg-gray-700 hover:scale-110 transition ease-out `}>
               Logout
             </div>
           </div>

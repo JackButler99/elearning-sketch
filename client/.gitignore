@@ -27,3 +27,8 @@ firebase.js
 .env
 myKey.json
 app.yaml
+gcor_config.json
+firebase.json
+
+
+.firebaserc
